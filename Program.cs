@@ -8,7 +8,7 @@ namespace GameChatZika
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!!!!!!!!!!!!!");
 
             
             List<Personagem> Personagens = new List<Personagem>();        
