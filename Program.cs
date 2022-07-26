@@ -8,27 +8,28 @@ namespace GameChatZika
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!!");
 
-            
-            List<Personagem> Personagens = new List<Personagem>();        
 
-                      
-                                
+            List<Personagem> Personagens = new List<Personagem>();
+
+
+
 
 
 
             // dar opções ao usuario
             Console.WriteLine("Escolha uma opção: ");
-            Console.WriteLine("\t1 - Criar Personagem");
-            Console.WriteLine("\t2 - Deletar Personagem");
-            Console.WriteLine("\t3 - Selecionar Personagem");
-            Console.WriteLine("\t4 - Sair");
+            Console.WriteLine("\t1 - Criar Personagem ");
+            Console.WriteLine("\t2 - Mostrar Ranking ");
+            Console.WriteLine("\t3 - Selecionar Personagem ");
+            Console.WriteLine("\t4 - Deletar Personagem ");
+            Console.WriteLine("\t5 - Sair");
             Console.Write("Sua opção? ");
             int opcao = 0;
             opcao = Convert.ToInt32(Console.ReadLine());
 
-            do
+            while (opcao != 5)
             {
                 // case em c#
                 switch (opcao)
@@ -82,9 +83,9 @@ namespace GameChatZika
                 Console.WriteLine("\t3 - Selecionar Personagem ");
                 Console.WriteLine("\t4 - Deletar Personagem ");
                 Console.WriteLine("\t5 - Sair");
-                Console.Write("Sua opção? ");                
+                Console.Write("Sua opção? ");
                 opcao = Convert.ToInt32(Console.ReadLine());
-            } while (opcao != 5);
+            }
 
         }
 
