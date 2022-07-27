@@ -54,11 +54,13 @@ namespace GameChatZika
 
                         Personagem personagem2 = new Personagem("Giuliano", 0.0m, 0, 0, 0, 0);
                         Personagem personagem3 = new Personagem("Joao", 5000.0m, 0, 0, 0, 0);
+                        
 
 
                         Personagens.Add(personagem1);
                         Personagens.Add(personagem2);
                         Personagens.Add(personagem3);
+                        
                         break;
                     case 2:
                         foreach (Personagem p in Personagens)
@@ -72,6 +74,24 @@ namespace GameChatZika
                         personagemEncontrado = EncontrarPersonagem(Personagens, "Joao");
 
                         Console.WriteLine($"{personagemEncontrado.Nome}, {personagemEncontrado.Level}");
+
+
+                        /////////////////////////////////////////////////////////////////////////////////////
+                        ///
+
+                        Personagem personagemNome;
+                        Console.WriteLine("Informe o NOME do personagem que deseja encontrar:");
+                        string nomePesquisado = Console.ReadLine();
+                        personagemNome = EncontrarPersonagemPeloNome(nomePesquisado, Personagens);
+
+                        if (personagemNome != null)
+                        {
+                            Console.WriteLine("Personagem encontrado:");
+                            Console.WriteLine("Nome: " + personagemNome.Nome);
+                            Console.WriteLine("CPF: " + personagemNome.Level);
+                           
+                        }
+
                         break;
                     case 4:
                         Console.WriteLine($"");
@@ -104,17 +124,26 @@ namespace GameChatZika
         }
 
 
-        static Personagem EncontrarPersonagem(List<Personagem> personagens, string nome)
+        static Personagem EncontrarPersonagem(List<Personagem> Personagens, string nome)
         {
             Personagem personagem = null;
-            for (int i = 0; i < personagens.Count; i++)
+            for (int i = 0; i < Personagens.Count; i++)
             {
-                if (personagens[i].Nome == nome)
+                if (Personagens[i].Nome == nome)
                 {
-                    personagem = personagens[i];
+                    personagem = Personagens[i];
                 }
             }
             return personagem;
         }
+
+        static Personagem EncontrarPersonagemPeloNome(string nomePesquisado, List<Personagem> Personagens)
+        {            
+            Personagem resultado = Personagens.SingleOrDefault(x => x.Nome == nomePesquisado);
+
+            return resultado;
+        }
+        
+
     }
 }
